@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather app</title>
+
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -11,64 +12,54 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="src/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Oswald:wght@200;300;400;500;600;700&family=Roboto+Slab:wght@100&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="container">
       <div class="weather-app">
-        <div class="row">
-          <div class="col-6">
-            <form action="">
-              <input type="text" placeholder="Enter a City" /><input
-                type="submit"
-              />
-            </form>
-          </div>
-          <div class="col col-6">
-            <button>Current Location</button>
-          </div>
+        <div class="input-group">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Enter a city"
+            aria-label="Recipient's username with two button addons"
+          />
+          <button class="btn btn-light" type="button">Search</button>
+          <button class="btn btn-light" type="button">Current Location</button>
         </div>
+
         <br />
         <br />
         <br />
         <div class="row">
           <div class="col">
-            <ul>
-              <li>Karaj, Iran</li>
+            <ul class="cityDaySitu">
+              <li class="cityName">Karaj, Iran</li>
               <li>Thursday 18:00</li>
               <li>Mostly sunny</li>
             </ul>
           </div>
           <div class="col-5">
-            <ul>
+            <ul class="tempPic">
               <li>
-                16°C|°F
+                <span class="temp"> 16 </span>°C|°F
                 <img
                   src="https://ssl.gstatic.com/onebox/weather/64/sunny_s_cloudy.png"
                   alt="sunny"
                 />
               </li>
               <div class="row">
-                <div class="col-5">
-                  <div class="row">
-                    <div class="col-6 col-md-4">
-                      <ul>
-                        <li>min</li>
-                        <li>7°C</li>
-                      </ul>
-                    </div>
-                    <div class="col-6 col-md-4">
-                      <ul>
-                        <li>max</li>
-                        <li>11°C</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
+                <div class="col-5"></div>
               </div>
             </ul>
           </div>
           <div class="col">
-            <ul>
+            <ul class="HumWind">
               <li>Humidity:93%</li>
               <li>Wind:3:09km/h</li>
             </ul>
@@ -79,7 +70,7 @@
           <br />
           <div class="row">
             <div class="col-2">
-              <ul>
+              <ul class="forcast">
                 <li>Fri</li>
                 <li>
                   <img
@@ -87,11 +78,11 @@
                     alt="sun"
                   />
                 </li>
-                <li>8°/10°</li>
+                <li>10°/ <span class="min">8°</span></li>
               </ul>
             </div>
             <div class="col-2">
-              <ul>
+              <ul class="forcast">
                 <li>Fri</li>
                 <li>
                   <img
@@ -99,11 +90,11 @@
                     alt="sun"
                   />
                 </li>
-                <li>8°/10°</li>
+                <li>10°/ <span class="min">8°</span></li>
               </ul>
             </div>
             <div class="col-2">
-              <ul>
+              <ul class="forcast">
                 <li>Fri</li>
                 <li>
                   <img
@@ -111,11 +102,11 @@
                     alt="sun"
                   />
                 </li>
-                <li>8°/10°</li>
+                <li>10°/ <span class="min">8°</span></li>
               </ul>
             </div>
             <div class="col-2">
-              <ul>
+              <ul class="forcast">
                 <li>Fri</li>
                 <li>
                   <img
@@ -123,11 +114,11 @@
                     alt="sun"
                   />
                 </li>
-                <li>8°/10°</li>
+                <li>10°/ <span class="min">8°</span></li>
               </ul>
             </div>
             <div class="col-2">
-              <ul>
+              <ul class="forcast">
                 <li>Fri</li>
                 <li>
                   <img
@@ -135,11 +126,11 @@
                     alt="sun"
                   />
                 </li>
-                <li>8°/10°</li>
+                <li>10°/ <span class="min">8°</span></li>
               </ul>
             </div>
             <div class="col-2">
-              <ul>
+              <ul class="forcast">
                 <li>Fri</li>
                 <li>
                   <img
@@ -147,20 +138,22 @@
                     alt="sun"
                   />
                 </li>
-                <li>8°/10°</li>
+                <li>10°/ <span class="min">8°</span></li>
               </ul>
             </div>
           </div>
         </div>
       </div>
-      <span>
-        This project was coded by SheCodes and is
-        <a href="https://github.com/sbshgit/sbsh-weather-app"
-          >open-sourced on GitHub</a
-        >
-        and
-        <a href="">hosted on Netlify</a>
-      </span>
+      <div class="coder">
+        <span>
+          This project was coded by Saba Shiranirad and is
+          <a class="github" href="https://github.com/sbshgit/sbsh-weather-app"
+            >open-sourced on GitHub</a
+          >
+          and
+          <a class="github" href="">hosted on Netlify</a>
+        </span>
+      </div>
     </div>
     <script src="src/app.js"></script>
   </body>

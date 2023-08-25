@@ -1,3 +1,98 @@
-h1 {
-  color: blue;
+body {
+  margin-top: 10px;
+  padding-top: 10px;
+  font-family: "Oswald", sans-serif;
+  background-color: #665d7c;
+}
+.weather-app {
+  color: #280128;
+  max-width: 630px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #704f84;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  background-image: url("https://img.freepik.com/premium-photo/thunderstorm-with-bright-lightnings-sea-water-storm-clouds-beautiful-sky_124507-14545.jpg");
+}
+
+.coder {
+  max-width: 630px;
+  margin: 0 auto;
+  color: #f5f3f3;
+  font-size: 20px;
+
+  font-family: "Great Vibes", cursive;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 25px;
+}
+.cityName {
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 30px;
+}
+.temp {
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 30px;
+}
+.min {
+  font-weight: 300;
+  color: #c7cbce;
+}
+.cityDaySitu {
+  border: 1px solid #704f84;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 0;
+  padding: 5px;
+}
+.cityDaySitu:hover {
+  box-shadow: 2px 2px 2px 1px rgba(2, 2, 2, 0.7);
+  color: black;
+  transition: all 200ms ease-in-out;
+}
+.tempPic {
+  text-align: center;
+}
+.HumWind {
+  border: 1px solid #704f84;
+  border-radius: 5px;
+  text-align: center;
+  padding: 20px;
+}
+.HumWind:hover {
+  box-shadow: 2px 2px 2px 1px rgba(2, 2, 2, 0.7);
+  color: black;
+  transition: all 200ms ease-in-out;
+}
+.forcast {
+  border: 1px solid #704f84;
+  border-radius: 5px;
+
+  text-align: center;
+  margin-top: 10px;
+  padding: 5px;
+}
+.forcast:hover {
+  box-shadow: 2px 2px 2px 1px rgba(2, 2, 2, 0.7);
+  color: black;
+  transition: all 200ms ease-in-out;
+}
+.github {
+  text-decoration: none;
+  color: #f5f3f3;
+  font-size: 20px;
+}
+.github:hover {
+  color: #b7b7b7;
 }
