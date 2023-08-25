@@ -100,3 +100,14 @@ li {
 .github:hover {
   color: #b7b7b7;
 }
+.weather-temperature img {
+  height: 64px;
+  width: 64px;
+  margin-left: 1px;
+}
+.units {
+  position: relative;
+  font-size: 12px;
+  top: -19px;
+  right: 5px;
+}
