@@ -53,3 +53,17 @@ function handleSubmit(event) {
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
 searchCity("Karaj");
+//get the weather of current location
+function searchLocation(position) {
+  let apiKey = "71e94ed71d67ec65d062e922a11d67dd";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(displayWeatherCondition);
+}
+
+function getCurrentLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(searchLocation);
+}
+let currentLocationButton = document.querySelector("#currentlocation");
+currentLocationButton.addEventListener("click", getCurrentLocation);
