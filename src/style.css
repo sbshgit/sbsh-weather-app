@@ -32,7 +32,7 @@ li {
   margin: 0;
   padding: 0;
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 500;
   line-height: 25px;
 }
 a {
@@ -56,8 +56,8 @@ a:hover {
   line-height: 30px;
 }
 .min {
-  font-weight: 300;
-  color: #8a2999;
+  font-weight: 500;
+  color: #5b0d31;
 }
 
 .cityDaySitu {
