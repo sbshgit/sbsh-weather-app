@@ -23,25 +23,43 @@
     <div class="container">
       <div class="weather-app">
         <div class="input-group">
-          <input
-            type="text"
-            class="form-control"
-            placeholder="Enter a city"
+          <form
+            class="search-form"
+            id="search-form"
             aria-label="Recipient's username with two button addons"
-          />
-          <button class="btn btn-light" type="button">Search</button>
-          <button class="btn btn-light" type="button">Current Location</button>
-        </div>
-
+          >
+          <div class="row">
+              <div class="col">
+                <input
+                  type="search"
+                  placeholder="Enter a city"
+                  autofocus="on"
+                  autocomplete="off"
+                  id="city-input"
+                  class="form-control shadow-sm"
+                />
+          </div>
+         
+              <div class="col col-lg-2">
+                <input type="submit" value="Search" class="btn btn-light" />
+           
+             </div>
+             <div class="col-md-auto">
+                <button class="btn btn-light"  id="current-location-button">
+                 Current Location
+                </button>
+           </div>
+          </div>
+          </form>
         <br />
         <br />
         <br />
         <div class="row">
           <div class="col">
             <ul class="cityDaySitu">
-              <li class="cityName">Karaj, Iran</li>
+              <li class="cityName" > <span id="city"> Karaj</span> </li>
               <li id="date"></li>
-              <li>Mostly sunny</li>
+              <li id="description">Mostly sunny</li>
             </ul>
           </div>
           <div class="col-5">
@@ -49,7 +67,7 @@
               <li>
                 <div class="clearfix weather-temperature">
                   <span class="float-left">
-                    <span class="temp"> 16 </span>
+                    <span class="temp" id="temperature"> 16 </span>
                     <span class="units">°C|°F </span></span
                   >
                   <img
@@ -66,8 +84,8 @@
           </div>
           <div class="col">
             <ul class="HumWind">
-              <li>Humidity:93%</li>
-              <li>Wind:3:09km/h</li>
+              <li>Humidity: <span id="humidity">93</span>%</li>
+              <li>Wind: <span id="wind">3:09 </span>km/h</li>
             </ul>
           </div>
           <br />
@@ -150,7 +168,8 @@
           </div>
         </div>
       </div>
-      <div class="coder">
+   </div>
+    <div class="coder">
         <span>
           This project was coded by Saba Shiranirad and is
           <a class="github" href="https://github.com/sbshgit/sbsh-weather-app"
@@ -162,7 +181,6 @@
           >
         </span>
       </div>
-    </div>
     <script src="src/app.js"></script>
   </body>
 </html>
