@@ -35,6 +35,16 @@ li {
   font-weight: 400;
   line-height: 25px;
 }
+a {
+  text-decoration: none;
+  color: #962a5c;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 25px;
+}
+a:hover {
+  color: #aa3d70;
+}
 .cityName {
   font-size: 30px;
   font-weight: 800;
@@ -105,9 +115,19 @@ li {
   width: 64px;
   margin-left: 1px;
 }
+
 .units {
   position: relative;
   font-size: 12px;
   top: -19px;
   right: 5px;
+}
+.active {
+  color: #280128;
+  cursor: default;
+  text-decoration: none;
+}
+.active:hover {
+  text-decoration: none;
+  color: #280128;
 }

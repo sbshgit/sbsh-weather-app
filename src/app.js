@@ -39,6 +39,7 @@ function displayWeatherCondition(response) {
   );
   document.querySelector("#description").innerHTML =
     response.data.weather[0].main;
+  celsiusTemp = response.data.main.temp;
 }
 function searchCity(city) {
   let apiKey = "71e94ed71d67ec65d062e922a11d67dd";
@@ -67,3 +68,26 @@ function getCurrentLocation(event) {
 }
 let currentLocationButton = document.querySelector("#currentlocation");
 currentLocationButton.addEventListener("click", getCurrentLocation);
+//convert temperature unit
+function convertToFahrenheit(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemp);
+  cg.classList.remove("active");
+  fh.classList.add("active");
+}
+let unitChangeToF = document.querySelector("#fh");
+unitChangeToF.addEventListener("click", convertToFahrenheit);
+
+function convertToCelsius(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(celsiusTemp);
+  cg.classList.add("active");
+  fh.classList.remove("active");
+}
+let unitChangeToC = document.querySelector("#cg");
+unitChangeToC.addEventListener("click", convertToCelsius);
+
+let celsiusTemp = null;
