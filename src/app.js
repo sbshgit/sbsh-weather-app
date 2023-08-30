@@ -38,7 +38,7 @@ function displayWeatherCondition(response) {
     response.data.wind.speed
   );
   document.querySelector("#description").innerHTML =
-    response.data.weather[0].main;
+    response.data.weather[0].description;
   celsiusTemp = response.data.main.temp;
   //change the image according to weather
   let iconElement = document.querySelector("#icon");
@@ -98,3 +98,14 @@ let unitChangeToC = document.querySelector("#cg");
 unitChangeToC.addEventListener("click", convertToCelsius);
 
 let celsiusTemp = null;
+//change background photo
+//if (response.data.weather[0].icon === "01d") {
+//const backImg = document.querySelector("#backgroundImg");
+//backImg.style.backgroundImage =
+//"url('https://jooinn.com/images/sunny-day.jpg ')";
+//backImg.style.backgroundSize = "cover";
+//} else {
+//backImg.style.backgroundImage =
+//"url('https://img.freepik.com/premium-photo/thunderstorm-with-bright-lightnings-sea-water-storm-clouds-beautiful-sky_124507-14545.jpg ')";
+//backImg.style.backgroundSize = "cover";
+//}
