@@ -1,5 +1,6 @@
 //create show current time in javascript
-function formatDate(date) {
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
   let hours = date.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
@@ -47,6 +48,9 @@ function displayWeatherCondition(response) {
     ` https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+  //change Date
+  let dateElement = document.querySelector("#date");
+  dateElement.innerHTML = formatDate(response.data.dt * 1000);
 }
 function searchCity(city) {
   let apiKey = "71e94ed71d67ec65d062e922a11d67dd";
