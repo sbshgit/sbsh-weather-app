@@ -40,6 +40,13 @@ function displayWeatherCondition(response) {
   document.querySelector("#description").innerHTML =
     response.data.weather[0].main;
   celsiusTemp = response.data.main.temp;
+  //change the image according to weather
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    ` https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 function searchCity(city) {
   let apiKey = "71e94ed71d67ec65d062e922a11d67dd";
