@@ -4,6 +4,7 @@ body {
   font-family: "Oswald", sans-serif;
   background-color: #665d7c;
 }
+
 .weather-app {
   color: #280128;
   max-width: 630px;
@@ -12,9 +13,30 @@ body {
   border: 1px solid #704f84;
   border-radius: 5px;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-  background-image: url("https://img.freepik.com/premium-photo/thunderstorm-with-bright-lightnings-sea-water-storm-clouds-beautiful-sky_124507-14545.jpg");
+  position: relative;
 }
-
+.weather-app::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.7
+  ); /* Change the opacity value to adjust the dimming effect */
+  z-index: -1;
+  border-radius: 5px;
+}
+.weather-app::before {
+  background-image: url("https://img.freepik.com/premium-photo/thunderstorm-with-bright-lightnings-sea-water-storm-clouds-beautiful-sky_124507-14545.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.75; /* Change the opacity value to adjust the dimming effect */
+}
 .coder {
   max-width: 630px;
   margin: 0 auto;
