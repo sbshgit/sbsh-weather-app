@@ -51,6 +51,8 @@ function displayWeatherCondition(response) {
   //change Date
   let dateElement = document.querySelector("#date");
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  //forecast the weather with api
+  getForecast(response.data.coord);
 }
 function searchCity(city) {
   let apiKey = "71e94ed71d67ec65d062e922a11d67dd";
@@ -103,7 +105,8 @@ unitChangeToC.addEventListener("click", convertToCelsius);
 
 let celsiusTemp = null;
 //the weather forecast
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data);
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = ` <div class="row">`;
   let days = ["Fri", "Sat", " Sun", "Mon", "Tue", "Wed"];
@@ -127,3 +130,9 @@ function displayForecast() {
   forecastElement.innerHTML = forecastHTML;
 }
 displayForecast();
+//forecast the weather with API
+function getForecast(coordinates) {
+  let apiKey = "71e94ed71d67ec65d062e922a11d67dd";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/forecast/daily?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
