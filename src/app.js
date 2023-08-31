@@ -102,14 +102,28 @@ let unitChangeToC = document.querySelector("#cg");
 unitChangeToC.addEventListener("click", convertToCelsius);
 
 let celsiusTemp = null;
-//change background photo
-//if (response.data.weather[0].icon === "01d") {
-//const backImg = document.querySelector("#backgroundImg");
-//backImg.style.backgroundImage =
-//"url('https://jooinn.com/images/sunny-day.jpg ')";
-//backImg.style.backgroundSize = "cover";
-//} else {
-//backImg.style.backgroundImage =
-//"url('https://img.freepik.com/premium-photo/thunderstorm-with-bright-lightnings-sea-water-storm-clouds-beautiful-sky_124507-14545.jpg ')";
-//backImg.style.backgroundSize = "cover";
-//}
+//the weather forecast
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = ` <div class="row">`;
+  let days = ["Fri", "Sat", " Sun", "Mon", "Tue", "Wed"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      ` <div class="col-2">
+              <ul class="forcast">
+                <li>${day}</li>
+                <li>
+                  <img
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAAVVJREFUaN7tmckNgzAQRV1CSqAEl+ASKIFjjpTgEiiBElICJeTKjXRAB5MZyUgOyoKNx8hkLL1LNv6D8RoFAKpklAiIgAiIgAiIwMsLGxs8rjXSI3cE3nB379cqYdstgIEsMn8I/Qn6vD1UAAMYZAoMvoa+r7ML4EWbncHXNNkEGMLvkggSYAy/ULMJ4I9XEZ0VIjp3xSVwYw6/cEsu4EYcyIhOLdBnFuhTC3DXPs3SgzeLD3TdcRw1Yj10sABz+VBgsxrpLgSG7RB4Qxcq0DKGp6AtMnsBB3e34QttiIBlEjAuPEQwhQh0HHff1fgcKQBHCtCA0GCIKja8/yToKeYsoaXuzYY6D6HL1YlpWGwSBvfR3MPo7rr/geWeyHonYJkw3EsJqxjafyzmil9On2JDU/yW8hSb+lMcq5ziYCvB0eJ0+NFiMYe78v+ACIiACIiACJTEEyDCTi8sMWUSAAAAAElFTkSuQmCC"
+                    alt="sun"
+                  />
+                </li>
+                <li>10°/ <span class="min">8°</span></li>
+              </ul>
+            </div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+displayForecast();
