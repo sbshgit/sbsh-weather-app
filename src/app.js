@@ -106,16 +106,19 @@ unitChangeToC.addEventListener("click", convertToCelsius);
 let celsiusTemp = null;
 //the weather forecast
 function displayForecast(response) {
-  let forcast = response.data.daily;
+  let forecast = response.data.list;
+  console.log(response.data.list);
+
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = ` <div class="row">`;
 
-  days.forEach(function (forecastDay, index) {
-    if (index < 6) {
-      forecastHTML =
-        forecastHTML +
-        ` <div class="col-2">
-              <ul class="forcast">
+  [6, 14, 22, 28, 38].forEach(function (index) {
+    const forecastDay = forecast[index];
+    forecastHTML =
+      forecastHTML +
+      `
+     <div class="col-2">
+              <ul class="forecast">
                 <li>${formatDay(forecastDay.dt)}</li>
                 <li>
                   <img
@@ -123,27 +126,27 @@ function displayForecast(response) {
                       forecastDay.weather[0].icon
                     }@2x.png"
                     alt="sun"
+                    width="42"
                   />
                 </li>
                 <li>${Math.round(
-                  forecastDay.temp.max
+                  forecastDay.main.temp_max
                 )}°/ <span class="min">${Math.round(
-          forecastDay.temp.min
-        )}°</span></li>
+        forecastDay.main.temp_min
+      )}°</span></li>
               </ul>
             </div>`;
-    }
   });
+
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
 displayForecast();
 //forecast the weather with API
 function getForecast(coordinates) {
-  let apiKey = "71e94ed71d67ec65d062e922a11d67dd";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/forecast/daily?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  let apiKey = "69254dfed53b07f9a24e299c9bde380f";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
-  console.log(apiUrl);
 }
 //forecast the weather with API mack the day work
 function formatDay(timestamp) {
